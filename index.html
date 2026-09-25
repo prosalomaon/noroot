@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduTech Toolbox | Terminal UI</title>
+  <meta name="description" content="Ferramentas e recursos essenciais para estudantes de desenvolvimento de sistemas.">
+
+  <link rel="icon" href="favicon.ico">
+  <!-- Google Fonts: JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#000000">
+</head>
+
+<body class="theme-matrix">
+  <div class="scanlines"></div>
+
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">EDU_TECH_{TB}</div>
+        <div class="status-bar">
+          <span class="status-dot" id="online-dot"></span> <span id="online-text">Online</span>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <button class="nav-item active" data-view="dashboard">
+          <span class="nav-icon">[+]</span> Dashboard
+        </button>
+        <button class="nav-item" data-view="converters">
+          <span class="nav-icon">[C]</span> Conversores
+        </button>
+        <button class="nav-item" data-view="diagrams">
+          <span class="nav-icon">[D]</span> Diagramas
+        </button>
+        <button class="nav-item" data-view="resources">
+          <span class="nav-icon">[R]</span> Curadoria
+        </button>
+        <button class="nav-item" data-view="apostilas">
+          <span class="nav-icon">[A]</span> Apostilas
+        </button>
+        <button class="nav-item" data-view="cheatsheets">
+          <span class="nav-icon">[S]</span> Cheat Sheets
+        </button>
+        <button class="nav-item" data-view="extras">
+          <span class="nav-icon">[E]</span> Extras
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="theme-selector">
+          <label for="theme-select">THEME:</label>
+          <select id="theme-select">
+            <option value="theme-matrix">Matrix Green</option>
+            <option value="theme-amber">Amber CRT</option>
+            <option value="theme-cyber">Cyber Cyan</option>
+            <option value="theme-clean">Classic White</option>
+          </select>
+        </div>
+        <div class="version">v1.0.0</div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <header class="view-header">
+        <h1 id="view-title">Dashboard</h1>
+        <div class="breadcrumb" id="breadcrumb">root / dashboard</div>
+      </header>
+
+      <section id="view-container" class="view-container">
+        <!-- Views will be injected here via script.js -->
+        <div id="dashboard-view" class="view active">
+          <div class="welcome-box">
+            <h2>BEM-VINDO, ESTUDANTE</h2>
+            <p>Escolha uma ferramenta no menu lateral ou use os atalhos abaixo.</p>
+          </div>
+
+          <div class="quick-grid">
+            <div class="card" onclick="app.switchView('converters')">
+              <h3>Bases Numéricas</h3>
+              <p>Bin / Dec / Hex / Oct</p>
+            </div>
+            <div class="card" onclick="app.switchView('resources')">
+              <h3>Roadmaps</h3>
+              <p>Estruture sua carreira</p>
+            </div>
+            <div class="card" onclick="app.switchView('extras')">
+              <h3>Cheat Sheets</h3>
+              <p>Git, Docker, Linux</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- PWA Installation Prompt -->
+  <div id="install-prompt" class="hidden">
+    <p class="prompt-text">Instalar EduTech Toolbox offline?</p>
+    <button id="install-btn" class="prompt-btn">C:\INSTALL</button>
+  </div>
+
+  <!-- PWA Update Prompt -->
+  <div id="update-prompt" class="hidden">
+    <p class="prompt-text">[!] SYSTEM UPDATE READY.</p>
+    <button id="reboot-btn" class="prompt-btn">C:\REBOOT</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
