@@ -1,10 +1,22 @@
-const CACHE_NAME = 'edutech-v9';
+const CACHE_NAME = 'edutech-v10';
 const ASSETS = [
     './',
     './index.html',
     './style.css',
-    './script.js',
     './manifest.json',
+    './js/app.js',
+    './js/main.js',
+    './js/data/diagrams.js',
+    './js/data/cheatsheets.js',
+    './js/data/resources.js',
+    './js/data/apostilas.js',
+    './js/views/dashboard.js',
+    './js/views/converters.js',
+    './js/views/diagrams.js',
+    './js/views/resources.js',
+    './js/views/apostilas.js',
+    './js/views/cheatsheets.js',
+    './js/views/extras.js',
     'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap',
     'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js'
 ];
